@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { DataService } from '../../services/data.service';
+import { IPost } from '../../interfaces/IPost';
+
 
 @Component({
   selector: 'app-home',
@@ -7,6 +10,13 @@ import { Component } from '@angular/core';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit{
+
+  constructor(private dataService: DataService) {}
+
+  ngOnInit(): void {
+    console.log('llegua aqui');
+    this.dataService.getPost().subscribe((data: IPost[]) => console.log(data));
+  }
 
 }

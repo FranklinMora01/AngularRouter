@@ -1,1 +1,11 @@
-<p>home works!</p>
+<h1 class="fst-italic text-center mb-5">Lista de Posts</h1>
+
+<div class="row" *ngFor="let post of posts">
+    <div class="col">
+        <h2> {{post.title.charAt(0).toUpperCase() + post.title.slice(1)}} </h2>
+        <a [routerLink]="['/user', post.userId]">Ver Author</a>
+        <p>{{ post.body }}</p>
+        <button class="btn btn-secondary">Comentarios</button>
+        <hr>
+    </div>
+</div>

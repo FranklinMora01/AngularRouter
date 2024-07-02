@@ -12,4 +12,10 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 })
 export class AppComponent {
   title = 'angularrouter';
+
+  navBarOpts = [
+    { path: '/home', name: 'Home'},
+    { path: '/users', name: 'Users'}
+  ];
+
 }

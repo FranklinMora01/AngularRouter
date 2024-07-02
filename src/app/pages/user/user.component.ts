@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { DataService } from '../../services/data.service';
 import { catchError, throwError } from 'rxjs';
 import { CommonModule } from '@angular/common';
+import { IUser } from '../../interfaces/IUser';
 
 @Component({
   selector: 'app-user',
@@ -13,6 +14,7 @@ import { CommonModule } from '@angular/common';
 })
 export class UserComponent implements OnInit{
 
+  public user!: IUser;
   public errorMensaje: string = '';
   constructor(private dataService: DataService,
     private activeRoute: ActivatedRoute){
@@ -34,7 +36,7 @@ export class UserComponent implements OnInit{
         this.errorMensaje = message;
         return throwError( () => new Error(message));
       })
-      ).subscribe( user => console.log(user));
+      ).subscribe( user => this.user = user);
     })
   }
 

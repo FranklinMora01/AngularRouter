@@ -1,3 +1,37 @@
 
-<div *ngIf="errorMensaje.length > 0" class="alert alert-danger">{{ errorMensaje }}
+<div *ngIf="errorMensaje.length > 0" class="alert alert-danger">
+    {{ errorMensaje }}
 </div>
+
+<div class="container mt-5 col-sm-6 offset-sm-3">
+    <table *ngIf="user; else templateEmpty" class="table">
+        <thead>
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Nick</th>
+                <th scope="col">Mail</th>
+                <th scope="col">Direccion</th>
+            </tr>
+        </thead>
+       <tbody>
+        <tr>
+            <th>{{ user.name }}</th>
+            <th>{{ user.username }}</th>
+            <th>{{ user.email }}</th>
+            <th>{{ user.address.street }} - {{ user.address.suite }}</th>
+            
+        </tr>
+       </tbody>
+    </table>
+</div>
+
+<ng-template #templateEmpty>
+    <div class="alert alert-warning" role="alert">
+        no existe usuario relacionado con ese ID! 
+    </div>
+</ng-template>
+
+<!-- cuando impriema en el html objet objetc con esto lo pasa por tuberia y muestra en json
+<pre>
+    {{ user | json}}
+</pre> -->

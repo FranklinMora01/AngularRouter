@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IPost } from '../interfaces/IPost';
 import { IUser } from '../interfaces/IUser';
+import { IComments } from '../interfaces/IComments';
 
 @Injectable({
   providedIn: 'root'
@@ -15,8 +16,12 @@ export class DataService {
     return this.http.get<IPost[]>('https://jsonplaceholder.typicode.com/posts');
   }
 
+  getComents(): Observable<IComments[]> {
+    return this.http.get<IComments[]>('https://jsonplaceholder.typicode.com/comments');
+  }
+
   getUserById(id: number): Observable<IUser> {
-    return this.http.get<IUser>(`https://jsonplaceholder.typicode.com/userstt/${id}`);
+    return this.http.get<IUser>(`https://jsonplaceholder.typicode.com/users/${id}`);
 
      /*
      ESTE ES UN EJMPL DE MANEJAR EL ERROR POR CONSOLA PERO SI SE QUIEEREN MANEJAR DESDE EL CPONENETE 

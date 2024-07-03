@@ -20,6 +20,10 @@ export class DataService {
     return this.http.get<IComments[]>('https://jsonplaceholder.typicode.com/comments');
   }
 
+  getUsers(): Observable<IUser[]> {
+    return this.http.get<IUser[]>('https://jsonplaceholder.typicode.com/users');
+  }
+
   getUserById(id: number): Observable<IUser> {
     return this.http.get<IUser>(`https://jsonplaceholder.typicode.com/users/${id}`);
 
@@ -35,8 +39,6 @@ export class DataService {
       return err;
     }));
   */
-  
-  
   }
 
  

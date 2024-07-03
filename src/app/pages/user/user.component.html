@@ -23,6 +23,34 @@
         </tr>
        </tbody>
     </table>
+    <br><br>
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="https://th.bing.com/th/id/OIP.rIsI3TvodysyTi_2VOGK3gHaHa?rs=1&pid=ImgDetMain" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+                <div>
+                    <h3 class="card-title">{{ user.name }}</h3>
+                </div>
+                <div class="inline-container">
+                    <h5>Nick:</h5>
+                    <p class="card-text"> {{ user.username }} </p>
+                </div>
+                <div class="inline-container">
+                    <h5>Mail:</h5>
+                    <p class="card-text"> {{ user.email }} </p>
+                </div>
+                <div class="inline-container">
+                    <h5>Dirección:</h5>
+                    <p class="card-text">{{ user.address.street }} - {{ user.address.suite }} </p>
+                </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
 </div>
 
 <ng-template #templateEmpty>

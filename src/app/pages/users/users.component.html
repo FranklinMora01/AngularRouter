@@ -1,1 +1,26 @@
-<p>users works!</p>
+<h1 class="fst-italic text-center mb-5">Lista de Usuarios</h1>
+
+<div class="container mt-5 col-sm-8 offset-sm-2">
+    
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Nick</th>
+            <th scope="col">Mail</th>
+            <th scope="col">Ciudad</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let usuario of usuarios">
+            <th scope="row"> {{ usuario.name }} </th>
+            <th> {{ usuario.username }} </th>
+            <th> {{ usuario.email }} </th>
+            <th> {{ usuario.address.city }} </th>
+          </tr>
+        </tbody>
+      </table>
+
+
+</div>
+

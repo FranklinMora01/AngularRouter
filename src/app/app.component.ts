@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './components/navbar/navbar.component';
+
 
 
 @Component({
@@ -11,11 +12,14 @@ import { NavbarComponent } from './components/navbar/navbar.component';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
+  
+
   title = 'angularrouter';
 
   navBarOpts = [
     { path: '/home', name: 'Home'},
-    { path: '/users', name: 'Users'}
+    { path: '/users', name: 'Users'},
+    { path: '/photos', name: 'Photos'}
   ];
 
 }

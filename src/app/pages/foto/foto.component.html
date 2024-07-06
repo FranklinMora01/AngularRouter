@@ -1,0 +1,24 @@
+<div *ngIf="errorMensaje.length > 0" class="alert alert-danger">
+  {{ errorMensaje }}
+</div>
+
+
+<div class="container mt-5 col-sm-4 offset-sm-4">
+  <div *ngIf="photo; else templateEmpty">
+    <div class="card" style="width: 18rem;">
+      <img [src]="photo.thumbnailUrl" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title"> {{ photo.title }} </h5>
+      </div>
+      <a [routerLink]="'/photos'" class="btn btn-primary">Volver</a>
+    </div>
+  </div>
+
+
+  </div>
+
+  <ng-template #templateEmpty>
+    <div class="alert alert-warning" role="alert">
+      no existe el id de la fotografia.  
+  </div>
+  </ng-template>

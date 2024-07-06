@@ -26,9 +26,9 @@ export class UserComponent implements OnInit{
 
   getUserById(){
     this.activeRoute.paramMap.subscribe( params => {
-      console.log(params);
+      //console.log(params);
       let id = Number(params.get('id'));
-      console.log(id);
+      //console.log(id);
 
       this.dataService.getUserById(id).pipe( catchError( error => {
         //console.log(error);
